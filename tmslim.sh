@@ -58,7 +58,7 @@ END {print sum}'`
     if (( $newsnapshotsum >= $TARGETSIZE )); then
     	#cull this backup
     	echo Removing ${BACKUPS[i]} $snapshotsum
-	 	delete ${BACKUPS[i]}
+	 	$TMUTIL delete ${BACKUPS[i]}
 	else
      let "snapshotsum+=$busizemb"
     echo $i: ${BACKUPS[i]} $snapshotsum
